@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app-backend
+  namespace: test-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: test-app-backend
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        io.kompose.service: test-app-backend
+    spec:
+      containers:
+      - name: test-app-backend
+        image: xfilefin/test-app-backend:test
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 1337
+      restartPolicy: Always
+      serviceAccountName: ""
+status: {}
