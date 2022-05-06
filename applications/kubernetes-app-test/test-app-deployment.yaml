@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: test-app-backend
-        image: xfilefin/test-app-backend:test
+        image: xfilefin/test-app-backend:test-22
         imagePullPolicy: "Always"
         ports:
         - containerPort: 1337
